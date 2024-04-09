@@ -19,14 +19,14 @@ export const Header = () => {
   const pathname = usePathname()
 
   return (
-    <div className="bg-[#191D23] rounded">
+    <nav className="bg-[#191D23] rounded">
       <div className="relative flex items-center justify-between">
         <Link className="py-3 px-9 border-r-2 border-[#FFFFFF14]" href="/">
           <Image src={Logo} alt="logo" />
         </Link>
 
         <div className="flex items-center gap-10">
-          <div className="flex gap-8">
+          <div className="flex gap-8 text-[#5D677D] ">
             {navigation.map((item) => (
               <Link
                 key={item.name}
@@ -34,7 +34,7 @@ export const Header = () => {
                 className={clsx(
                   item.href === pathname &&
                     "text-[#007AFF] relative before:absolute before:content-[''] before:h-[2px] before:bg-[#007AFF] before:w-full before:-bottom-1 before:rounded-full",
-                  'text-sm font-medium text-[#5D677D] hover:text-[#007AFF]'
+                  'text-sm font-medium hover:text-[#007AFF] transition-all'
                 )}
               >
                 {item.name}
@@ -51,6 +51,6 @@ export const Header = () => {
           </div>
         </div>
       </div>
-    </div>
+    </nav>
   )
 }

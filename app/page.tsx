@@ -6,7 +6,10 @@ export default function Home() {
       <h1 className="text-3xl">Home</h1>
       <h3 className="text-xl mt-2">
         Go to{' '}
-        <Link href="/ai-audit" className="text-[#007AFF] underline">
+        <Link
+          href="/ai-audit"
+          className="text-[#007AFF] underline hover:decoration-wavy"
+        >
           AI Audit
         </Link>{' '}
         page to get started.
