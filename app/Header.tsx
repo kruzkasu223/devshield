@@ -32,7 +32,7 @@ export const Header = () => {
                 key={item.name}
                 href={item.href}
                 className={clsx(
-                  item.href === pathname &&
+                  pathname?.startsWith(item.href) &&
                     "text-[#007AFF] relative before:absolute before:content-[''] before:h-[2px] before:bg-[#007AFF] before:w-full before:-bottom-1 before:rounded-full",
                   'text-sm font-medium hover:text-[#007AFF] transition-all'
                 )}

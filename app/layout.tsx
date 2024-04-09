@@ -21,7 +21,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={lato.className}>
-        <main className="min-h-screen p-3">
+        <main className="h-screen p-3 flex flex-col overflow-hidden">
           <Header />
           {children}
         </main>
