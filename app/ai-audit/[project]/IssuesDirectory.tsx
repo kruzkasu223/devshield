@@ -1,4 +1,4 @@
-import { Issue } from '@/store'
+import { Issue as TIssue } from '@/store'
 import Image from 'next/image'
 import ArrowRight from '../../../public/arrow-right.svg'
 import InfoIcon from '../../../public/info.svg'
@@ -14,7 +14,7 @@ type P = {
     info: number
     optimisation: number
   }
-  issues?: Issue[]
+  issues?: TIssue[]
 }
 
 const ISSUE_MAPPER = {
@@ -37,7 +37,7 @@ const ISSUE_COLOR_MAPPER = {
 
 export const IssuesDirectory = ({ issuesCount, issues }: P) => {
   const [selectedIssueType, setSelectedIssueType] = useState<string>()
-  const [selectedIssue, setSelectedIssue] = useState<Issue>()
+  const [selectedIssue, setSelectedIssue] = useState<TIssue>()
   return (
     <>
       <div className="border-b-2 border-[#FFFFFF14] pb-2 pl-2 text-xs flex gap-[6px]">
@@ -253,7 +253,7 @@ const Issue = ({
   onSelect,
   isSelected = false,
 }: {
-  issue: Issue
+  issue: TIssue
   onSelect?: () => void
   isSelected?: boolean
 }) => {

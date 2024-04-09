@@ -1,5 +1,5 @@
 'use client'
-import { Project, useIssues, useProjects } from '@/store'
+import { Project as TProject, useIssues, useProjects } from '@/store'
 import { FilesDirectory } from './FilesDirectory'
 import { IssuesDirectory } from './IssuesDirectory'
 import { CodeEditor } from './CodeEditor'
@@ -11,7 +11,7 @@ import clsx from 'clsx'
 export default function Project() {
   const { project } = useProjects()
   const { issues, issuesCount } = useIssues()
-  const [selectedFile, setSelectedFile] = useState<Project['files'][number]>()
+  const [selectedFile, setSelectedFile] = useState<TProject['files'][number]>()
   const [filesDirectoryOpen, setFilesDirectoryOpen] = useState(true)
   const [issuesDirectoryOpen, setIssuesDirectoryOpen] = useState(true)
 
