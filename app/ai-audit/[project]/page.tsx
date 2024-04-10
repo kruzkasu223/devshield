@@ -24,7 +24,7 @@ export default function Project() {
       <div
         className={clsx(
           'bg-[#13161A] h-full rounded p-3 select-none relative transition-all',
-          !filesDirectoryOpen ? 'w-0 flex-grow-[0]' : 'w-80 flex-grow'
+          !filesDirectoryOpen ? 'w-0' : 'w-1/4'
         )}
       >
         {filesDirectoryOpen && (
@@ -51,14 +51,23 @@ export default function Project() {
         </div>
       </div>
 
-      <div className={clsx('bg-[#13161A] h-full flex-grow-[3] rounded p-3')}>
+      <div
+        className={clsx(
+          'bg-[#13161A] h-full rounded p-3 transition-all',
+          filesDirectoryOpen && issuesDirectoryOpen
+            ? 'w-1/2'
+            : filesDirectoryOpen || issuesDirectoryOpen
+            ? 'w-3/4'
+            : 'w-full'
+        )}
+      >
         <CodeEditor selectedFile={selectedFile} />
       </div>
 
       <div
         className={clsx(
           'bg-[#13161A] h-full rounded p-3 flex flex-col gap-3 relative transition-all',
-          !issuesDirectoryOpen ? 'w-0 flex-grow-[0]' : 'w-80 flex-grow'
+          !issuesDirectoryOpen ? 'w-0' : 'w-1/4'
         )}
       >
         <div
